@@ -20,7 +20,7 @@ function Authentication({ setIsLoggedIn, setUserUsernme }) {
   function handleSubmit(e) {
     e.preventDefault();
     if (_switch) {
-      axios.post('http://localhost:3000/api/auth/login', {
+      axios.post('http://localhost:8000/api/auth/login', {
         username: username,
         password: password,
       })
@@ -33,7 +33,7 @@ function Authentication({ setIsLoggedIn, setUserUsernme }) {
         console.error(error);
       });
     } else {
-      axios.post('http://localhost:3000/api/auth/register', {
+      axios.post('http://localhost:8000/api/auth/register', {
         username: username,
         password: password,
       })
