@@ -3,14 +3,24 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import Header from '../../components/navigation/Header';
 import SideBar from '../../components/navigation/SideBar';
+import { BrowserRouter, Route, Routes, Navigate } from 'react-router-dom';
 
 function Dashboard({ userUsername, setIsLoggedIn }) {
 
   return (
-    <div className="dashboard-container">
-      <Header userUsername={userUsername} setIsLoggedIn={setIsLoggedIn} />
-      <SideBar />
-    </div>
+    <BrowserRouter>
+      <div className="dashboard-container">
+        <Header userUsername={userUsername} setIsLoggedIn={setIsLoggedIn} />
+        <SideBar />
+        <Routes>
+          <Route path="/" element={<HomePage />} />
+          <Route path="/home" element={<HomePage />} />
+          <Route path="/favorites" element={<Favorites />} />
+          <Route path="/watchlater" element={<WatchLater />} />
+          {/* <Route path="/home" element={<Navigate />} /> */}
+        </Routes>
+      </div>
+    </BrowserRouter>
   )
 }
 
