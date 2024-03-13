@@ -1,4 +1,4 @@
-import 'general.css';
+import './general.css';
 import PropTypes from 'prop-types';
 import React from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
