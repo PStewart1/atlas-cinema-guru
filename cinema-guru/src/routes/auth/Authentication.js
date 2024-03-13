@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import React, { useState } from 'react';
 import Login from './Login';
 import Register from './Register';
+import axios from 'axios';
 
 function Authentication({ setIsLoggedIn, setUserUsernme }) {
   const [username, setUsername] = useState('');
@@ -16,9 +17,40 @@ function Authentication({ setIsLoggedIn, setUserUsernme }) {
     setUsername("");
   }
 
+  function handleSubmit(e) {
+    e.preventDefault();
+    if (_switch) {
+      axios.post('http://localhost:3000/api/auth/login', {
+        username: username,
+        password: password,
+      })
+      .then(response => {
+        localStorage.setItem('accessToken', response.data.accessToken);
+        setIsLoggedIn(true);
+        setUserUsernme(username);
+      })
+      .catch(error => {
+        console.error(error);
+      });
+    } else {
+      axios.post('http://localhost:3000/api/auth/register', {
+        username: username,
+        password: password,
+      })
+      .then(response => {
+        localStorage.setItem('accessToken', response.data.accessToken);
+        setIsLoggedIn(true);
+        setUserUsernme(username);
+      })
+      .catch(error => {
+        console.error(error);
+      });
+    }
+  }
+
   return (
     <div className="auth-container">
-      <form className="auth-form" >
+      <form className="auth-form" onSubmit={handleSubmit}>
         {_switch ? 
         <Login 
           username={username} 
