@@ -1,0 +1,9 @@
+@import '../App.css';
+
+.red-text {
+    color: var(--color-light-red);
+}
+
+.italics {
+    font-style: italic;
+}

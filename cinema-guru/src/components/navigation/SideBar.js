@@ -1,37 +1,49 @@
-import './navigation.css';
-import React, { useState, useEffect } from 'react';
-import Activity from '../Activity';
-import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
+import './navigation.css';
+import Activity from '../Activity';
+import React, { useEffect, useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faArrowRight, faClock, faFolder, faStar } from '@fortawesome/free-solid-svg-icons';
+import { faFolder, faStar, faClock, faArrowRight } from '@fortawesome/free-solid-svg-icons';
 
-function SideBar() {
-  const [selected, setSelected] = useState("home");
-  const [activities, setActivities] = useState([]);
+const SideBar = () => {
+    const [selected, setSelected] = useState('home');
+    // const [small, setSmall] = useState(true);
+    const [activities, setActivities] = useState([]);
+    const [showActivities, setShowActivities] = useState(false);
+    const navigate = useNavigate();
 
-  const navigate = useNavigate();
+    const setPage = (pageName) => {
+        setSelected(pageName);
+        switch (pageName) {
+            case 'Home':
+                navigate('/home');
+                break;
+            case 'Favorites':
+                navigate('/favorites');
+                break;
+            case 'Watch Later':
+                navigate('/watchlater');
+                break;
+            default:
+                break;
+        }
+    }
 
-  function setPage(pageName) {
-    setSelected(pageName);
-    navigate(pageName);
-  }
+    useEffect(() => {
+        axios.get('http://localhost:8000/api/activity')
+        .then(response => {
+            setActivities(response.data);
+        })
+        .catch(error => {
+            console.error(error);
+        });
+    }, []);
 
-  useEffect(() => {
-    axios.get('http://localhost:8000/api/activity/')
-      .then((res) => {
-        setActivities(res.data.results);
-      })
-      .catch((err) => {
-        console.log(err);
-        // setActivities(activitiesList);
-      });
-  }, []);
-
-  return (
-    <div className="sidebar">
-      <ul>
-        <li className={selected === 'home' ? 'active-item' : 'sidebar-item'} onClick={() => setPage("home")} >
+    return (
+        <nav className="sidebar">
+            <ul className="sidebar-nav">
+            <li className={selected === 'home' ? 'active-item' : 'sidebar-item'} onClick={() => setPage("home")} >
           <FontAwesomeIcon icon={faFolder} className="mainIcon" />
           <h2>Home</h2>
           <FontAwesomeIcon icon={faArrowRight} className="arrowIcon" />
@@ -46,20 +58,17 @@ function SideBar() {
           <h2>Watch Later</h2>
           <FontAwesomeIcon icon={faArrowRight} className="arrowIcon" />
         </li>
-      </ul>
-      <div className="activities">
-        <h1>Latest Activities</h1>
-        {activities.map(activity => (
-          <Activity
-            key={activity.id}
-            username={activity.username}
-            title={activity.title}
-            date={activity.date}
-          />
-        ))}
-      </div>
-    </div>
-  )
+            </ul>
+            <div className="activities">
+            <h1>Latest Activities</h1>
+            {showActivities && (
+                activities.slice(0, 10).map(activity => (
+                    <Activity userUsername="Bob" title="SomeMovie" date="11/13/2023"/>
+                ))
+            )}
+            </div>
+        </nav>
+    )
 }
 
-export default SideBar
+export default SideBar;

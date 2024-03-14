@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import React from 'react';
 import Button from '../../components/general/Button';
 import Input from '../../components/general/Input';
-import { faUser, faKey, faPlus } from '@fortawesome/free-solid-svg-icons';
+import { faUser, faKey } from '@fortawesome/free-solid-svg-icons';
 
 function Login({ username, password, setUsername, setPassword }) {
   return (
@@ -15,6 +15,7 @@ function Login({ username, password, setUsername, setPassword }) {
         value={username}
         setValue={setUsername}
         icon={faUser}
+        className="username"
       />
       <Input
         label="Password"
@@ -22,8 +23,9 @@ function Login({ username, password, setUsername, setPassword }) {
         value={password}
         setValue={setPassword}
         icon={faKey}
+        className="password"
       />
-      <Button label="Sign In" icon={faPlus} className="squareButton" />
+      <Button label="Sign In" icon={faKey} className="login-button" />
     </div>
   )
 }

@@ -2,14 +2,15 @@ import './components.css';
 // import PropTypes from 'prop-types';
 import React from 'react';
 
-function Activity() {
+const Activity = ({ username, title,  date}) => {
   return (
-    <div className="activity-container">
-      <li>
-        <p>Activity</p>
-      </li>
+    <div className="activity">
+      <span>{username} </span>
+      <span>added </span>
+      <span>{title} </span>
+      <span>to watch later - {date}</span>
     </div>
-  )
+  );
 }
 
 export default Activity

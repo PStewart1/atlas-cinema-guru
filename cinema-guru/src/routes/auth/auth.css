@@ -1,114 +1,83 @@
-/* Set font for entire document */
-* {
-    font-family: 'Roboto', sans-serif;
-}
+@import '../../App.css';
 
-/* Style for authentication container */
-.auth-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-}
-
-/* Style for authentication form */
 .auth-form {
-    width: 100%;
-    height: 75vh;
-    max-width: 800px;
-    margin: 0 auto;
-    background-color: #fff;
-    border-radius: 5px;
-    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3);
-    align-items: center;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    min-width: 250px;
 }
 
-/* Style for authentication form body */
-.auth-form-body {
+.light-red {
+    background-color: var(--color-light-red) !important;
+}
+
+.dark-red {
+    background-color: var(--color-dark-red) !important;
+}
+
+Authentication {
+    place-self: center;
+}
+
+form {
+    width: 50%;
+    max-width: 450px;
+}
+
+form > .login, form > .register {
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    margin-top: 5rem;
-    min-width: 800px;
-    padding-left: .5rem; /* Add horizontal padding */
-    padding-right: .5rem; /* Add horizontal padding */
 }
 
-/* Style for button container */
-.button-container {
-    text-align: center;
+form > .login > p, form > .register > p {
+    font-size: 19px;
+    align-self: center;
+    color: #1c1c1c;
+    
 }
 
-/* Style for input icon */
-.input-icon {
-    color: gray;
-    padding-top: 0.5rem;
-}
-
-/* Style for authentication form header */
-.auth-form-header {
+/* AUTH BUTTONS */
+form > auth-buttons {
     display: flex;
-    align-items: center;
-    height: 10vh;
-    font-size: 1.5rem;
+    flex-direction: row;
 }
 
-/* Style for left and right authentication form header sections */
-.auth-form-header>div {
-    height: 100%;
+form Button {
+    margin: 0;
+    padding-left: 10%;
+    padding-right: 10%;
     width: 50%;
-    background-color: #e31c25;
-    color: white;
-    display: flex;
-    justify-content: center;
-    align-items: center;
 }
 
-/* Style for active tab */
-.active {
-    background-color: #bb000e !important;
+/* LOGIN */
+.login, .register {
+    background-color: white;
 }
 
-/* Style for sign-in and sign-up header text */
-.signin-form-header>h1,
-.signup-form-header>h1 {
-    font-size: 2rem;
-    margin: 3rem 0;
+.login .icon-label, .register .icon-label {
+    margin: 5px;
 }
 
-/* Style for sign-in and sign-up containers */
-.signin-container,
-.signup-container {
-    width: 100%;
+.login .icon-label svg, .register .icon-label svg {
+    color: gray;
 }
 
-/* Style for left authentication form header section */
-.auth-form-header>div:first-child {
-    float: left;
+.login label, .register label {
+    color: #1C1C1C;
 }
 
-/* Style for right authentication form header section */
-.auth-form-header>div:last-child {
-    float: right;
+.login Input, .register Input {
+    background-color: white;
+    margin: 5px;
 }
 
-/* Style for left authentication form header section content */
-#headerDiv1 {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100%;
-    color: white;
-    background-color: #e31c25;
+.login-button, .register-button {
+    align-self: flex-end;
+    margin: 10px;
 }
 
-/* Style for right authentication form header section content */
-#headerDiv2 {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100%;
-    color: white;
-    background-color: #e31c25;
+.login .input-container, .register .input-container {
+    padding-left: 10%;
+    padding-right: 10%;
 }

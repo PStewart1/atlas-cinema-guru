@@ -9,7 +9,7 @@ function MovieCard({ movie }) {
   const [isWatchLater, setIsWatchLater] = useState(false);
 
   useEffect(() => {
-    axios.get('http://localhost:8000/api/favorite/')
+    axios.get('http://localhost:8000/api/titles/favorite/')
     .then(response => {
       const isFavorite = response.data.some(favorite => favorite.movie === movie.id);
       setIsFavorite(isFavorite);
@@ -18,7 +18,7 @@ function MovieCard({ movie }) {
       console.error(error);
     });
 
-    axios.get('http://localhost:8000/api/watchlater/')
+    axios.get('http://localhost:8000/api/titles/watchlater/')
     .then(response => {
       const isWatchLater = response.data.some(watchlater => watchlater.movie === movie.id);
       setIsWatchLater(isWatchLater);
@@ -31,7 +31,7 @@ function MovieCard({ movie }) {
   function handleClick(type) {
     if (type === "favorite") {
       if (isFavorite) {
-        axios.delete('http://localhost:8000/api/favorite/')
+        axios.delete('http://localhost:8000/api/titles/favorite/')
         .then(() => {
           setIsFavorite(false);
         })
@@ -39,7 +39,7 @@ function MovieCard({ movie }) {
           console.error(error);
         });
       } else {
-        axios.post('http://localhost:8000/api/favorite/', {
+        axios.post('http://localhost:8000/api/titles/favorite/', {
           movie: movie.id,
         })
         .then(() => {
@@ -51,7 +51,7 @@ function MovieCard({ movie }) {
       }
     } else {
       if (isWatchLater) {
-        axios.delete('http://localhost:8000/api/watchlater/')
+        axios.delete('http://localhost:8000/api/titles/watchlater/')
         .then(() => {
           setIsWatchLater(false);
         })
@@ -59,7 +59,7 @@ function MovieCard({ movie }) {
           console.error(error);
         });
       } else {
-        axios.post('http://localhost:8000/api/watchlater/', {
+        axios.post('http://localhost:8000/api/titles/watchlater/', {
           movie: movie.id,
         })
         .then(() => {

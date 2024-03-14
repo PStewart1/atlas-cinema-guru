@@ -4,6 +4,7 @@ import React, { useState } from 'react';
 import Login from './Login';
 import Register from './Register';
 import axios from 'axios';
+import Button from '../../components/general/Button';
 
 const Authentication = ({ setIsLoggedIn, setUserUsername }) => {
   const [username, setUsername] = useState('');
@@ -64,10 +65,20 @@ const Authentication = ({ setIsLoggedIn, setUserUsername }) => {
           setUsername={setUsername} 
           setPassword={setPassword} 
         />}
-        <div className="switch">
-          <span onClick={() => handleLogin(true)} className={_switch ? "active" : ""}>Sign in</span>
-          <span onClick={() => handleLogin(false)} className={!_switch ? "active" : ""}>Sign up</span>
-        </div>
+          <div className="auth-buttons">
+              <Button
+                  label="Sign In"
+                  type="button"
+                  className={_switch ? "light-red" : "dark-red"}
+                  onClick={() => set_switch(true)}
+              />
+              <Button
+                  label="Sign Up"
+                  type="button"
+                  className={_switch ? "dark-red" : "light-red"}
+                  onClick={() => set_switch(false)}
+              />
+          </div>
       </form>
     </div>
   )

@@ -3,9 +3,9 @@ import PropTypes from 'prop-types';
 import React from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
-function Button({ label, className, onClick, icon }) {
+const Button = ({ label, type, className, onClick, icon }) => {
   return (
-    <button className={`button ${className}`} onClick={onClick}>
+    <button className={`button ${className}`} type={type} onClick={onClick}>
       {icon && <FontAwesomeIcon icon={icon} className="button-icon"/>}
       {label}
     </button>

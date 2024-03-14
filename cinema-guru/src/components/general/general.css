@@ -1,36 +1,95 @@
-/* Input */
-input {
-  width: 100%;
-  padding: 12px 20px;
-  margin: 8px 0;
-  display: inline-block;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-  box-sizing: border-box;
-}
+@import '../../App.css';
 
-/* Button */
-
+/* -- BUTTONS -- */
 button {
-  width: 100%;
-  background-color: #4CAF50;
-  color: white;
-  padding: 14px 20px;
-  margin: 8px 0;
-  border: none;
-  border-radius: 4px;
-  cursor: pointer;
+    background-color: var(--color-dark-red);
+    color: var(--color-light);
+    font-size: 15px;
+    border: none;
+    margin:5px;
+    padding: 8px 16px;
+    transition: background-color 0.5s ease;
 }
 
 button:hover {
-  background-color: #45a049;
+    background-color: var(--color-light-red);
 }
 
-/* Container */
+/* -- INPUTS -- */
 
-.container {
-  border-radius: 5px;
-  background-color: #f2f2f2;
-  padding: 20px;
+.input-container {
+    margin:10px;
+    display: flex;
+    flex-direction:column;
 }
 
+input {
+    background-color: var(--color-dark-gray);
+    border:none;
+    border-bottom: 1px solid var(--color-light-red);
+}
+
+.input-error > input {
+    border: 1px solid var(--color-light-red) !important;
+}
+.input-error > label {
+    color: var(--color-light-red);
+}
+
+label {
+    color: var(--color-light);
+}
+
+/* .icon-label {
+    display: flex;
+    flex-direction: row;
+} */
+
+svg {
+    color: white;
+    margin-right: 5px;
+    width: 16px;
+}
+
+/* -- SEARCH BARS -- */
+.search-bar {
+    margin:10px;
+}
+
+.search-bar > input {
+    color: rgba(255, 255, 255, 60);
+    border-radius: 0.5rem;
+    border: none;
+    min-width: 50%;
+}
+
+/* .search-bar:hover > input {
+    color: rgba(255, 255, 255, 100);
+} */
+
+input::placeholder {
+    padding-left: 5px;
+    padding-right: 5px;
+    color: rgba(255, 255, 255, 0.6);
+    font-size: 16px;
+}
+
+/* -- SELECT INPUTS -- */
+select {
+    background-color: var(--color-dark-gray);
+    color: var(--color-light);
+    border-bottom: 1px solid var(--color-light-red);
+}
+
+.select-container {
+    display: flex;
+    flex-direction: column;
+}
+
+.select-container > select {
+    width: 40%;
+}
+
+select option:hover {
+    background-color: gray; /* does not work */
+}

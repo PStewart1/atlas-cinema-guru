@@ -1,0 +1,26 @@
+@import '../../App.css';
+
+li.tag {
+    border: 1px solid var(--color-light-red);
+    border-radius: 5rem;
+    color: var(--color-white);
+    background-color: var(--color-black);
+}
+
+li.tag selected {
+    background-color: var(--color-light-red);
+}
+
+
+.genre-tag {
+    background-color: var(--primary);
+    margin-bottom: 10px;
+    padding: 0.2rem 0.7rem;
+    border-radius: 15px;
+    font-weight: bold;
+}
+
+.active-tag {
+    background-color: var(--primary);
+    border: 1px solid var(--primary);
+}

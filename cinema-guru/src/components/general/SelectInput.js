@@ -4,7 +4,7 @@ import React from 'react';
 
 function SelectInput({ label, options, className, value, setValue }) {
   return (
-    <div className={`input-container ${className}`}>
+    <div className={`select-container ${className}`}>
       {label && <label>{label}</label>}
       <select
         className={className}

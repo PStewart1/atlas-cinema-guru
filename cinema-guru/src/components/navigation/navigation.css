@@ -1,0 +1,133 @@
+@import '../../App.css';
+
+nav {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    background-color: var(--color-black);
+}
+
+nav h3 {
+    color: var(--color-light);
+    margin-left: 10px;
+}
+
+.welcome {
+    color: var(--color-light);
+}
+
+nav img {
+    border-radius: 5rem;
+    border: 1px solid var(--color-light-red);
+    height: 2em;
+    margin-right: 10px;
+}
+
+nav span p,
+nav span svg {
+    color: var(--color-dark-red);
+}
+
+nav .user-info {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+nav .user-info p {
+    margin-right: 10px;
+}
+
+nav .user-info FontAwesomeIcon {
+    margin-right: 10px;
+}
+
+nav .user-info span {
+    margin-right: 10px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    cursor: pointer;
+}
+
+/* Sidebar */
+
+.sidebar {
+    display: inline-block;
+    background-color: var(--darkRed);
+    width: 5rem;
+    height: 100vh;
+    padding-top: 2rem;
+}
+
+.sidebar:hover {
+    width: 25rem;
+}
+
+.sidebar ul {
+    list-style: none;
+    padding: 0;
+}
+
+.sidebar-item,
+.active-item {
+    color: var(--white);
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    visibility: hidden;
+}
+
+.active-item {
+    background-color: var(--red);
+}
+
+.sidebar-item:hover,
+.active-item:hover {
+    background-color: var(--red);
+}
+
+.active-item .mainIcon {
+    background-color: var(--red);
+}
+
+.mainIcon {
+    visibility: visible;
+    padding: 1.5rem;
+}
+
+.arrowIcon {
+    padding: 1.5rem;
+    height: 2rem;
+    position: relative;
+    left: -1.5rem;
+}
+
+.sidebar:hover .sidebar-item,
+.sidebar:hover .active-item {
+    visibility: visible;
+}
+
+.sidebar-item h2,
+.active-item h2 {
+    padding: 0 2rem;
+}
+
+/* Activities List */
+
+.activities {
+    background-color: var(--lightGray);
+    margin: 2rem 0.5rem;
+    padding: 1rem;
+    visibility: hidden;
+}
+
+.activities h1 {
+    color: var(--white);
+    border-bottom: 0.25rem solid var(--white);
+    text-align: center;
+}
+
+.sidebar:hover .activities {
+    visibility: visible;
+}
