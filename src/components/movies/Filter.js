@@ -65,9 +65,9 @@ function Filter({minYear, setMinYear, maxYear, setMaxYear, sort, setSort, genres
 }
 
 Filter.propTypes = {
-  minYear: PropTypes.string,
+  minYear: PropTypes.number,
   setMinYear: PropTypes.func,
-  maxYear: PropTypes.string,
+  maxYear: PropTypes.number,
   setMaxYear: PropTypes.func,
   sort: PropTypes.string,
   setSort: PropTypes.func,

@@ -54,10 +54,11 @@ nav .user-info span {
 
 .sidebar {
     display: inline-block;
-    background-color: var(--darkRed);
+    background-color: var(--color-dark-red);
     width: 5rem;
     height: 100vh;
     padding-top: 2rem;
+    /* color: white; */
 }
 
 .sidebar:hover {
@@ -70,25 +71,25 @@ nav .user-info span {
 }
 
 .sidebar-item,
-.active-item {
-    color: var(--white);
+.selected {
+    color: var(--bg-light);
     display: flex;
     align-items: center;
     text-decoration: none;
     visibility: hidden;
 }
 
-.active-item {
-    background-color: var(--red);
+.selected {
+    background-color: var(--color-light-red);
 }
 
 .sidebar-item:hover,
-.active-item:hover {
-    background-color: var(--red);
+.selected:hover {
+    background-color: var(--color-light-red);
 }
 
-.active-item .mainIcon {
-    background-color: var(--red);
+.selected .mainIcon {
+    background-color: var(--color-light-red);
 }
 
 .mainIcon {
@@ -113,18 +114,22 @@ nav .user-info span {
     padding: 0 2rem;
 }
 
+.icon {
+    visibility: visible;
+}
+
 /* Activities List */
 
 .activities {
-    background-color: var(--lightGray);
+    background-color: lightgray;
     margin: 2rem 0.5rem;
     padding: 1rem;
-    visibility: hidden;
+    /* visibility: hidden; */
 }
 
-.activities h1 {
-    color: var(--white);
-    border-bottom: 0.25rem solid var(--white);
+.activities li {
+    color: var(--color-light);
+    border-bottom: 0.25rem solid var(--color-light);
     text-align: center;
 }
 
