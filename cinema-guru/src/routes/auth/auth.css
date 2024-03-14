@@ -1,0 +1,114 @@
+/* Set font for entire document */
+* {
+    font-family: 'Roboto', sans-serif;
+}
+
+/* Style for authentication container */
+.auth-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+/* Style for authentication form */
+.auth-form {
+    width: 100%;
+    height: 75vh;
+    max-width: 800px;
+    margin: 0 auto;
+    background-color: #fff;
+    border-radius: 5px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3);
+    align-items: center;
+}
+
+/* Style for authentication form body */
+.auth-form-body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 5rem;
+    min-width: 800px;
+    padding-left: .5rem; /* Add horizontal padding */
+    padding-right: .5rem; /* Add horizontal padding */
+}
+
+/* Style for button container */
+.button-container {
+    text-align: center;
+}
+
+/* Style for input icon */
+.input-icon {
+    color: gray;
+    padding-top: 0.5rem;
+}
+
+/* Style for authentication form header */
+.auth-form-header {
+    display: flex;
+    align-items: center;
+    height: 10vh;
+    font-size: 1.5rem;
+}
+
+/* Style for left and right authentication form header sections */
+.auth-form-header>div {
+    height: 100%;
+    width: 50%;
+    background-color: #e31c25;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Style for active tab */
+.active {
+    background-color: #bb000e !important;
+}
+
+/* Style for sign-in and sign-up header text */
+.signin-form-header>h1,
+.signup-form-header>h1 {
+    font-size: 2rem;
+    margin: 3rem 0;
+}
+
+/* Style for sign-in and sign-up containers */
+.signin-container,
+.signup-container {
+    width: 100%;
+}
+
+/* Style for left authentication form header section */
+.auth-form-header>div:first-child {
+    float: left;
+}
+
+/* Style for right authentication form header section */
+.auth-form-header>div:last-child {
+    float: right;
+}
+
+/* Style for left authentication form header section content */
+#headerDiv1 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    color: white;
+    background-color: #e31c25;
+}
+
+/* Style for right authentication form header section content */
+#headerDiv2 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    color: white;
+    background-color: #e31c25;
+}

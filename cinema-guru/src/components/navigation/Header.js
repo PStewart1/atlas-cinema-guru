@@ -3,7 +3,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { faSignOutAlt } from '@fortawesome/free-solid-svg-icons';
 
-function Header(userUsername, setIsLoggedIn) {
+const Header = ({ userUsername, setIsLoggedIn }) => {
 
   function logout() {
     localStorage.removeItem('accessToken');

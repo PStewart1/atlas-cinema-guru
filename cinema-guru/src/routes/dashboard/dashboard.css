@@ -1,0 +1,5 @@
+.dashboard-container {
+    background-color: var(--darkGray);
+    color: var(--white);
+    height: 100vh;
+}

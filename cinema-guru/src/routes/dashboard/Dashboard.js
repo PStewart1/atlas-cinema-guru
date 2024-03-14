@@ -4,8 +4,11 @@ import PropTypes from 'prop-types';
 import Header from '../../components/navigation/Header';
 import SideBar from '../../components/navigation/SideBar';
 import { BrowserRouter, Route, Routes, Navigate } from 'react-router-dom';
+import HomePage from './HomePage';
+import Favorites from './Favorites';
+import WatchLater from './WatchLater';
 
-function Dashboard({ userUsername, setIsLoggedIn }) {
+const Dashboard = ({userUsername, setIsLoggedIn}) => {
 
   return (
     <BrowserRouter>

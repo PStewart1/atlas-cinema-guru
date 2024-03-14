@@ -5,7 +5,7 @@ import Login from './Login';
 import Register from './Register';
 import axios from 'axios';
 
-function Authentication({ setIsLoggedIn, setUserUsernme }) {
+const Authentication = ({ setIsLoggedIn, setUserUsername }) => {
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
   const [_switch, set_switch] = useState(true);
@@ -27,7 +27,7 @@ function Authentication({ setIsLoggedIn, setUserUsernme }) {
       .then(response => {
         localStorage.setItem('accessToken', response.data.accessToken);
         setIsLoggedIn(true);
-        setUserUsernme(username);
+        setUserUsername(username);
       })
       .catch(error => {
         console.error(error);
@@ -40,7 +40,7 @@ function Authentication({ setIsLoggedIn, setUserUsernme }) {
       .then(response => {
         localStorage.setItem('accessToken', response.data.accessToken);
         setIsLoggedIn(true);
-        setUserUsernme(username);
+        setUserUsername(username);
       })
       .catch(error => {
         console.error(error);

@@ -29,6 +29,7 @@ function App() {
 
   return (
     <div className="App">
+      
       {isLoggedIn ? <Dashboard userUsername={userUsername} setIsLoggedIn={setIsLoggedIn} /> : <Authentication setIsLoggedIn={setIsLoggedIn} setUserUsername={setUserUsername} />}
     </div>
   );
